@@ -27,7 +27,7 @@ function MenuPlatforms() {
       <Link href="/tasks">
         <Menu.Item as="a">Tareas</Menu.Item>
       </Link>
-      <Link href="/AddTask">
+      <Link href="/tasks/newtask">
         <Menu.Item as="a">Crear Tarea</Menu.Item>
       </Link>
     </Menu>
