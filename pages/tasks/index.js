@@ -13,11 +13,10 @@ export default function Index({ data }) {
             <div className="h5 text-uppercase">
               <Link href={`/tasks/${id}`}>
                 <a>
-                  {id} - {title}
+                  {title}
                 </a>
               </Link>
             </div>
-            <p className="fw-light">{description}</p>
           </div>
         </div>
       ))}
