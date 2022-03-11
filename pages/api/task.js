@@ -1,4 +1,4 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+// // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 // import TaskSchema from "../../models/Task";
 // export default function handler(req, res) {
 //   // res.status(200).json({ name: 'John Doe' })
@@ -23,3 +23,16 @@
 //         .json({ success: false, error: "Falla de servidor" });
 //   }
 // }
+
+export default async function handler(req, res) {
+  try {
+    const res2 = await fetch(
+      "https://7xjrtq0o9b.execute-api.us-west-2.amazonaws.com/tasks"
+    );
+    const data = await res2.json();
+    res.status(200).json(data);
+  } catch (error) {
+    console.log(error);
+  }
+
+}

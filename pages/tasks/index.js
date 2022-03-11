@@ -1,8 +1,9 @@
 import BasicLayout from "../../layouts/BasicLayout";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Link from "next/link";
 
 export default function Index({ data }) {
-  console.log(data);
+
   return (
     <BasicLayout>
       <h1>Lista de tareas</h1>
@@ -10,7 +11,11 @@ export default function Index({ data }) {
         <div className="card mb-2 ms-2" key={id}>
           <div className="card-body">
             <div className="h5 text-uppercase">
-              {id} - {title}
+              <Link href={`/tasks/${id}`}>
+                <a>
+                  {id} - {title}
+                </a>
+              </Link>
             </div>
             <p className="fw-light">{description}</p>
           </div>
