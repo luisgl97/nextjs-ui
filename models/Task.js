@@ -10,4 +10,4 @@ const TaskSchema = new Schema({
     }
 })
 
-export default TaskSchema;
+export default ("Task",TaskSchema);

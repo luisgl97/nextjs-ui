@@ -34,5 +34,33 @@ export default async function handler(req, res) {
   } catch (error) {
     console.log(error);
   }
+}
 
+export default async function obtenerPath(path){
+  try {
+    const res2 = await fetch(
+      "https://7xjrtq0o9b.execute-api.us-west-2.amazonaws.com/tasks"
+    );
+    const data = await res2.json();
+    
+    const paths = data.body.tasks.map(({id}) => ({params:{id:`${id}`}}));
+    
+    return paths;
+    
+  } catch (error) {
+    console.log(error);
+    
+  }
+}
+
+export async function getTotalGamesPlatformApi(platform){
+  try {
+      const url = `${BASE_PATH}/games/count?platform.url=${platform}`;
+      const response = await fetch(url);
+      const result = await response.json();
+      return result;
+  } catch (error) {
+      console.log(error);
+      return null;
+  }
 }

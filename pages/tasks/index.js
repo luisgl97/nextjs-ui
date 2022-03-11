@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Link from "next/link";
 
 export default function Index({ data }) {
-
+  console.log(data);
   return (
     <BasicLayout>
       <h1>Lista de tareas</h1>
